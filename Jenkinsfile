@@ -5,7 +5,9 @@ pipeline {
         stage('Build') {
             steps {
                 // Clone or download the application package (WAR file)
-                https://github.com/AKSarav/SampleWebApp/raw/master/dist/SampleWebApp.war
+                git branch: 'main',
+                    credentialsId: 'your-credentials-id',
+                    url: 'https://github.com/Prajwaldc-githuber/hello-world-war-java.git'
                 sh 'mvn clean package'
             }
         }
