@@ -7,7 +7,7 @@ pipeline {
                 sh 'wget https://tomcat.apache.org/tomcat-6.0-doc/appdev/sample/sample.war -O sample.war'
             }
         }
-        stage('Deploy1') {
+        stage('Deploy') {
             steps {
                 sshagent(['ec2-ssh-key']) {
                     sh '''
@@ -17,7 +17,7 @@ pipeline {
                 }
             }
         }  
-        stage('test') {
+        stage('Test') {
             steps {
                 // Verify Tomcat servers are responding
                 sh '''
