@@ -1,14 +1,12 @@
 pipeline {
-    agent any
+    agent none
 
     stages {
         stage('Build') {
+            agent {label 'tomcat-redhat'}
             steps {
                 // Clone or download the application package (WAR file)
-                git branch: 'main',
-                    credentialsId: 'your-credentials-id',
                     url: 'https://github.com/Prajwaldc-githuber/hello-world-war-java.git'
-                sh 'mvn clean package'
             }
         }
     }
