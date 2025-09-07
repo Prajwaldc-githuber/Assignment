@@ -13,7 +13,7 @@ pipeline {
             steps {
                 sh '''
                 scp sample.war ec2-user@172.31.45.119:/home/ec2-user/tomcat/webapps
-                sudo rm sample.war
+                
                 '''
             }
         }
