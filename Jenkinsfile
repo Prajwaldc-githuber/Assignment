@@ -1,9 +1,8 @@
 pipeline {
-    agent none
+    agent any
 
     stages {
         stage('Build') {
-            agent { label 'tomcat-redhat' }
             steps {
                 touch new_file
             }
