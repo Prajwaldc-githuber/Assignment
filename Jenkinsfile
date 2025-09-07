@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh '''
-                touch new_file
+                git clone https://github.com/Prajwaldc-githuber/hello-world-war-java.git
                 '''
             }
         }
