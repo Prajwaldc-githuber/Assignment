@@ -12,9 +12,11 @@ pipeline {
         stage('Deploy') {
             steps {
                 sh '''
-                scp -o StrictHostKeyChecking=no sample.war ec2-user@172.31.45.119:/home/ec2-user/tomcat/webapps
+                 sshagent(['ec2-ssh-key']) {
+            sh 'scp -o StrictHostKeyChecking=no sample.war ec2-user@172.31.45.119:/home/ec2-user/tomcat/webapps/'
                 
                 '''
+            }
             }
         }
     }
