@@ -13,6 +13,7 @@ pipeline {
                 sshagent(['ec2-ssh-key']) {
                     sh '''
                         scp -o StrictHostKeyChecking=no sample.war ec2-user@172.31.45.119:/home/ec2-user/tomcat/webapps/
+                        scp -o StrictHostKeyChecking=no sample.war ec2-user@172.31.46.100:/home/ec2-user/tomcat/webapps/
                     '''
                 }
             }
