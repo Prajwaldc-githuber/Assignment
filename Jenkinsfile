@@ -2,7 +2,7 @@ pipeline {
     agent none
 
     stages {
-        agent { label 'tomcat-ec2-user' }
+        agent { label 'tomcat-redhat' }
         stage('Build') {
             steps {
                 sh '''
