@@ -22,10 +22,10 @@ pipeline {
                 // Verify Tomcat servers are responding
                 sh '''
                     echo "Checking Tomcat server 1..."
-                    curl -s http://172.31.45.119:8080/sample/ || echo "Server 1 not reachable"
+                    curl -f http://172.31.45.119:8080/sample/ || exit 1
 
                     echo "Checking Tomcat server 2..."
-                    curl -s http://172.31.46.100:8080/sample/ || echo "Server 2 not reachable"
+                    curl -f http://172.31.46.100:8080/sample/ || exit 1
                 '''
             }
         }
